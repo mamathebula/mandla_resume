@@ -1,0 +1,46 @@
+name: Deploy Resume to ApplyZA
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Mandla CV repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build React app
+        run: PUBLIC_URL=/resume_mandla npm run build
+
+      - name: Checkout ApplyZA repo
+        uses: actions/checkout@v4
+        with:
+          repository: mamathebula/applyza
+          token: ${{ secrets.APPLYZA_TOKEN }}
+          path: applyza
+
+      - name: Copy build to ApplyZA
+        run: |
+          rm -rf applyza/resume_mandla/static applyza/resume_mandla/asset-manifest.json applyza/resume_mandla/index.html applyza/resume_mandla/mandla.jpeg
+          cp -r build/* applyza/resume_mandla/
+
+      - name: Commit and push to ApplyZA
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add resume_mandla/
+          git diff --staged --quiet || git commit -m "Auto-deploy Mandla CV resume update"
+          git push
+        working-directory: applyza
