@@ -77,12 +77,12 @@ Mandla Mathebula — Senior Cloud Support Engineer
 
 All files in this repo are necessary — no leftovers or junk.
 
-| File/Folder | Purpose | Why Needed |
-|-------------|---------|------------|
-| `.github/workflows/` | CI/CD pipeline | Auto-builds and deploys to ApplyZA repo on every push — without this you'd manually build and copy files each time |
-| `public/` | React HTML template + profile photo | React needs `index.html` as the entry point and `mandla.jpeg` is your profile image |
-| `src/` | React components | This is the actual code you edit — Hero, About, Experience, Skills, Projects, etc. |
-| `.gitignore` | Git ignore rules | Prevents `node_modules/` (800+ packages) and `build/` (generated output) from bloating the repo |
-| `package.json` | Project config + dependencies | Defines React dependencies and sets `homepage: "/resume_mandla"` so asset paths work on the live site |
-| `package-lock.json` | Dependency lock file | Ensures `npm install` gives the exact same versions every time — required for reproducible builds |
+| File/Folder | What It Does | Why It Is Needed |
+|---|---|---|
+| `.github/workflows/` | CI/CD pipeline | Auto-deploys to ApplyZA on push |
+| `public/` | HTML template + photo | React entry point and profile image |
+| `src/` | React components | The code you actually edit |
+| `.gitignore` | Git ignore rules | Keeps node_modules and build out of repo |
+| `package.json` | Config + dependencies | Sets homepage path for live site |
+| `package-lock.json` | Dependency lock | Reproducible builds with exact versions |
 | `README.md` | Documentation | This file |
