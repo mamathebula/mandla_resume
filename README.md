@@ -72,3 +72,14 @@ Mandla Mathebula — Senior Cloud Support Engineer
 - LinkedIn: [linkedin.com/in/mandla-mathebula-4258a518a](https://linkedin.com/in/mandla-mathebula-4258a518a)
 - GitHub: [github.com/mamathebula](https://github.com/mamathebula)
 - Location: Cape Town, Western Cape
+
+## What Each File/Folder Does
+
+| File/Folder | Purpose |
+|-------------|---------|
+| `.github/workflows/` | CI/CD pipeline — auto-deploys to ApplyZA repo on push |
+| `public/` | React HTML template and profile photo |
+| `src/` | React components (the actual code you edit) |
+| `.gitignore` | Keeps `node_modules/` and `build/` out of git |
+| `package.json` / `package-lock.json` | Dependencies and `/resume_mandla` homepage config |
+| `README.md` | This file |
