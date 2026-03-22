@@ -75,11 +75,14 @@ Mandla Mathebula — Senior Cloud Support Engineer
 
 ## What Each File/Folder Does
 
-| File/Folder | Purpose |
-|-------------|---------|
-| `.github/workflows/` | CI/CD pipeline — auto-deploys to ApplyZA repo on push |
-| `public/` | React HTML template and profile photo |
-| `src/` | React components (the actual code you edit) |
-| `.gitignore` | Keeps `node_modules/` and `build/` out of git |
-| `package.json` / `package-lock.json` | Dependencies and `/resume_mandla` homepage config |
-| `README.md` | This file |
+All files in this repo are necessary — no leftovers or junk.
+
+| File/Folder | Purpose | Why Needed |
+|-------------|---------|------------|
+| `.github/workflows/` | CI/CD pipeline | Auto-builds and deploys to ApplyZA repo on every push — without this you'd manually build and copy files each time |
+| `public/` | React HTML template + profile photo | React needs `index.html` as the entry point and `mandla.jpeg` is your profile image |
+| `src/` | React components | This is the actual code you edit — Hero, About, Experience, Skills, Projects, etc. |
+| `.gitignore` | Git ignore rules | Prevents `node_modules/` (800+ packages) and `build/` (generated output) from bloating the repo |
+| `package.json` | Project config + dependencies | Defines React dependencies and sets `homepage: "/resume_mandla"` so asset paths work on the live site |
+| `package-lock.json` | Dependency lock file | Ensures `npm install` gives the exact same versions every time — required for reproducible builds |
+| `README.md` | Documentation | This file |
