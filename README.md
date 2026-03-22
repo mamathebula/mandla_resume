@@ -1,31 +1,24 @@
-# Mandla Mathebula — Cloud Resume
+# Mandla Mathebula — Senior Cloud Support Engineer Portfolio
 
-A Netflix-inspired portfolio website built as part of the AWS Cloud Resume Challenge.
+Professional portfolio website showcasing cloud engineering experience, projects, and skills.
 
 ## Live Site
 
-Deployed to: `applyza.co.za/resume_mandla/`
+**https://applyza.co.za/resume_mandla/**
 
 ## Features
 
-- React portfolio with Netflix-inspired design
-- Visitor counter using AWS Lambda, DynamoDB & API Gateway
-- CI/CD pipeline with GitHub Actions — auto-deploys to the ApplyZA repo on push to main
-- Sections: Hero, About, Experience, Skills, What I Bring, Projects, Contact
+- React portfolio with clean light theme
+- Sections: Hero, About, Experience, Skills, Projects, What I Bring, Contact
+- CI/CD pipeline with GitHub Actions — auto-deploys to ApplyZA repo on push to main
+- Dark/light mode toggle (light default)
 
 ## Tech Stack
 
-**Frontend:**
 - React 18
-- CSS (Netflix-inspired design)
-
-**Backend:**
-- AWS Lambda (Python) — visitor counter
-- Amazon DynamoDB — stores visit count
-- API Gateway — exposes the Lambda function
-
-**CI/CD:**
-- GitHub Actions — builds React app and copies to `applyza/resume_mandla/`
+- CSS
+- GitHub Actions (CI/CD)
+- Hosted via Cloudflare Pages (through ApplyZA repo)
 
 ## Local Development
 
@@ -38,8 +31,16 @@ npm start
 
 Push to `main` triggers the GitHub Actions workflow which:
 1. Builds the React app with `PUBLIC_URL=/resume_mandla`
-2. Copies the build output to the ApplyZA repo's `resume_mandla/` folder
-3. Commits and pushes to ApplyZA — Cloudflare Pages auto-deploys from there
+2. Copies build output to the ApplyZA repo's `resume_mandla/` folder
+3. Commits and pushes — Cloudflare Pages auto-deploys from there
+
+**Note:** Requires `APPLYZA_TOKEN` secret in repo settings for the GitHub Action to push to the ApplyZA repo.
+
+Manual deploy:
+```bash
+npm run build
+cp -r build/* /path/to/applyza/resume_mandla/
+```
 
 ## Project Structure
 
@@ -60,11 +61,8 @@ Push to `main` triggers the GitHub Actions workflow which:
 │       ├── Projects.jsx
 │       ├── Skills.jsx
 │       └── WhatIBring.jsx
-├── lambda/
-│   └── visitor-counter.py
-├── build/              # Production build output
 └── .github/workflows/
-    └── deploy.yml      # CI/CD pipeline
+    └── deploy.yml
 ```
 
 ## Author
