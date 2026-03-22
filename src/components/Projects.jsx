@@ -26,13 +26,13 @@ function Projects() {
     },
     {
       title: "EBS Volume Migration Tool (gp2 → gp3)",
-      description: "Automated migration of gp2 EBS volumes to gp3 across AWS accounts. Queries EC2 API, displays volume details, migrates in batches of 10 to avoid throttling, supports --all-regions with auto-approval, and calculates savings at volume, region, and account levels. Zero downtime, no cleanup required.",
+      description: "At AWS, our team managed 200+ gp2 EBS volumes across multiple regions. gp3 is 20% cheaper with better baseline performance, but manual Console migration was impractical at scale. Built a bash script that queries the EC2 API, displays volume details, migrates in batches of 10 to avoid throttling, supports --all-regions with auto-approval, and calculates savings at every level.",
       technologies: ["Bash", "AWS CLI", "EC2 API", "EBS", "Cost Optimization"],
       achievements: [
-        "20% cost reduction per volume ($0.10/GB → $0.08/GB) — e.g., 10 TB = $200/month savings",
+        "Migrated 200+ gp2 volumes to gp3, saving an estimated $4,000+/year across the account",
+        "20% cost reduction per volume ($0.10/GB → $0.08/GB)",
         "Hours of manual Console clicking reduced to a single command completing in minutes",
         "Multi-region support with --all-regions flag — no forgotten volumes",
-        "Improved IOPS for volumes under 1 TB (3,000 baseline vs size-dependent on gp2)",
         "Zero downtime — online migration with no impact to running workloads",
         "Reusable across any AWS account with no configuration or cleanup needed"
       ]
@@ -64,14 +64,14 @@ function Projects() {
     },
     {
       title: "AWS Resource Cleanup Stack",
-      description: "Automated cleanup of unused AWS resources (CloudFormation stacks, EC2 instances, S3 buckets, EBS volumes/snapshots, Elastic IPs). CloudFormation stack deploying Lambda with EventBridge scheduling. Configurable retention periods, tag-based protection (do-not-delete), pre-deletion email warnings, and CloudWatch metrics.",
+      description: "Our AWS environment had 500+ unused EBS volumes and snapshots accumulating costs alongside orphaned CloudFormation stacks, EC2 instances, S3 buckets, and Elastic IPs. Built a CloudFormation stack deploying Lambda with EventBridge scheduling for automated lifecycle management. Configurable retention periods, tag-based protection (do-not-delete), pre-deletion email warnings, and CloudWatch metrics.",
       technologies: ["CloudFormation", "AWS Lambda", "EventBridge", "SNS", "CloudWatch", "S3", "EC2", "IAM"],
       achievements: [
+        "Cleaned up 500+ unused volumes and snapshots, saving an estimated $1,500+/year in storage costs",
         "Automated lifecycle management preventing cost accumulation from forgotten resources",
         "Configurable 1–168 hour retention with 1–24 hour warning windows",
         "Tag-based protection (do-not-delete) prevents accidental deletion of critical resources",
         "Scoped IAM permissions across 30+ AWS services for comprehensive stack deletion",
-        "CloudWatch metrics tracking deletions, protections, and age distributions",
         "Pre-deletion email warnings via SNS before any resource is removed"
       ]
     },
@@ -132,11 +132,11 @@ function Projects() {
       ]
     },
     {
-      title: "Personal Portfolio Website",
-      description: "React-based portfolio hosted on Cloudflare Pages with full CI/CD pipeline: push to GitHub → GitHub Actions builds → copies to ApplyZA repo → Cloudflare deploys globally. Built with Kiro AI IDE.",
+      title: "Professional Portfolio & CI/CD Pipeline",
+      description: "Needed a professional online presence to showcase cloud engineering projects and experience. Built a React-based portfolio with automated deployment — pushing code to GitHub triggers GitHub Actions to build the React app, copy output to the ApplyZA repo, and Cloudflare Pages deploys globally. No manual builds or file copying needed.",
       technologies: ["React", "JavaScript", "CSS3", "HTML5", "Cloudflare Pages", "GitHub Actions CI/CD", "Kiro AI IDE"],
       achievements: [
-        "Full CI/CD pipeline: push to main → auto-build → auto-deploy",
+        "Full CI/CD pipeline: push to main → auto-build → auto-deploy to production",
         "Built with Kiro, an AI-powered IDE for accelerated development",
         "Dark and light theme support using CSS custom properties",
         "Responsive design optimized for mobile and desktop",

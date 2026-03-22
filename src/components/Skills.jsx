@@ -16,7 +16,7 @@ function Skills() {
     },
     {
       category: "Monitoring & Operations",
-      skills: ["CloudWatch", "SLA Management", "Cost Optimization", "Observability"]
+      skills: ["CloudWatch", "Grafana", "Alerta", "SLA Management", "Cost Optimization", "Observability"]
     },
     {
       category: "Security & Compliance",
