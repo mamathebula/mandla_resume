@@ -9,15 +9,12 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 
 function App() {
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('theme') || 'dark';
-  });
+  const [theme, setTheme] = useState('light');
 
   const [activeSection, setActiveSection] = useState('all');
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {

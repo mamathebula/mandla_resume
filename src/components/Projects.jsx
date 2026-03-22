@@ -3,6 +3,28 @@ import React from 'react';
 function Projects() {
   const projects = [
     {
+      title: "Subject Matter Expert (SME) — AWS Marketplace Fulfillment Products",
+      description: "Achieved SME status for 3 major AWS Marketplace fulfillment product types: Single AMI, Single AMI with CloudFormation, and Second-Party (2P) products. Drove operational excellence through data-driven reporting and process optimization.",
+      technologies: ["AWS Marketplace", "Single AMI", "CloudFormation", "2P Products", "Business Analytics"],
+      achievements: [
+        "SME for 3 core AWS Marketplace fulfillment product types, providing technical leadership and escalation support",
+        "Compiled WBR and MBR analyzing fulfillment performance metrics to inform strategic decisions",
+        "Drove self-service adoption by standardizing how engineers guide sellers, reducing manual case volume",
+        "Authored and maintained SOPs and scalable documentation for consistent case handling"
+      ]
+    },
+    {
+      title: "Engineer Training & Global Team Expansion",
+      description: "Led structured training and mentoring programs to develop engineers to operational independence, expanding team capacity and establishing SME coverage in a new geographic region.",
+      technologies: ["AWS Marketplace", "Cloud Infrastructure", "Mentoring", "Knowledge Transfer"],
+      achievements: [
+        "Onboarded new hires to operational independence within 1 week",
+        "Mentored engineers to full SME status in 3.5 months, establishing first-ever SME presence for Single AMI in Japan",
+        "Developed replicable training methodology that accelerated onboarding",
+        "Enabled more effective case distribution, reducing bottlenecks and improving response times"
+      ]
+    },
+    {
       title: "EBS Volume Migration Tool (gp2 → gp3)",
       description: "Automated migration of gp2 EBS volumes to gp3 across AWS accounts. Queries EC2 API, displays volume details, migrates in batches of 10 to avoid throttling, supports --all-regions with auto-approval, and calculates savings at volume, region, and account levels. Zero downtime, no cleanup required.",
       technologies: ["Bash", "AWS CLI", "EC2 API", "EBS", "Cost Optimization"],
@@ -21,7 +43,7 @@ function Projects() {
       technologies: ["AWS Lambda", "CloudFormation", "EventBridge", "CloudTrail", "SNS", "CloudWatch", "Python"],
       achievements: [
         "Real-time compliance enforcement within seconds of rule creation",
-        "Fully serverless at ~$0.60/month (vs $5.14+ for marketplace alternatives)",
+        "Fully serverless with minimal operational cost",
         "Eliminated manual security group auditing across all AWS regions",
         "Tag-based whitelisting for authorized exceptions",
         "Prevented unauthorized access through automatic rule revocation",
@@ -30,7 +52,7 @@ function Projects() {
     },
     {
       title: "Lambda Runtime Bulk Updater",
-      description: "Built during internship to update 100+ Lambda functions running deprecated runtimes (Python 3.8, 3.9). Bash script queries Lambda API, discovers functions on specified old runtimes, and updates in parallel batches of 10 with real-time progress. Deployable via AWS CLI or CloudShell with zero setup.",
+      description: "Automated updates for Lambda functions running deprecated runtimes (Python 3.8, 3.9). Bash script queries Lambda API, discovers functions on specified old runtimes, and updates in parallel batches of 10 with real-time progress. Deployable via AWS CLI or CloudShell with zero setup.",
       technologies: ["Bash", "AWS CLI", "Lambda API", "CloudShell"],
       achievements: [
         "Full-day manual task reduced to under 5 minutes with zero errors",
@@ -55,26 +77,15 @@ function Projects() {
     },
     {
       title: "Apply ZA — University Application Platform",
-      description: "Production web platform helping South African learners apply to 26+ universities and 50 TVET colleges from R99. PWA built with vanilla JavaScript, hosted on Cloudflare Pages. PayFast payment integration, Google Sheets data sync via Apps Script, FormSubmit email notifications, and service worker (v24.1) for offline support. Admin dashboard with SHA-256 + Cloudflare Access protection.",
+      description: "Production web platform helping South African learners apply to universities and TVET colleges. PWA built with vanilla JavaScript, hosted on Cloudflare Pages. PayFast payment integration, Google Sheets data sync via Apps Script, FormSubmit email notifications, and service worker (v24.1) for offline support. Admin dashboard with SHA-256 + Cloudflare Access protection.",
       technologies: ["JavaScript", "HTML5", "CSS3", "PWA", "Cloudflare Pages", "PayFast", "Google Apps Script", "Service Worker"],
       achievements: [
         "Live production platform at applyza.co.za serving South African learners",
         "Fully serverless architecture with PWA offline support",
-        "NSFAS applications (R149), appeals (R169), Funza Lushaka (R149), CAO (R249)",
+        "Supports 26+ universities and 50 TVET colleges",
         "APS calculator for qualification checking across all universities",
         "Automated payment processing and Google Sheets data synchronization",
         "Donation system enabling free applications for disadvantaged students"
-      ]
-    },
-    {
-      title: "Subject Matter Expert (SME) — AWS Marketplace Fulfillment Products",
-      description: "Achieved SME status for 3 major AWS Marketplace fulfillment product types: Single AMI, Single AMI with CloudFormation, and Second-Party (2P) products. Drove operational excellence through data-driven reporting and process optimization.",
-      technologies: ["AWS Marketplace", "Single AMI", "CloudFormation", "2P Products", "Business Analytics"],
-      achievements: [
-        "SME for 3 core AWS Marketplace fulfillment product types, providing technical leadership and escalation support",
-        "Compiled WBR and MBR analyzing fulfillment performance metrics to inform strategic decisions",
-        "Drove self-service adoption by standardizing how engineers guide sellers, reducing manual case volume",
-        "Authored and maintained SOPs and scalable documentation for consistent case handling"
       ]
     },
     {
@@ -118,17 +129,6 @@ function Projects() {
         "Identified critical defects before launch, preventing negative seller experience",
         "Enabled seller self-service for version and visibility updates",
         "Eliminated manual approval delays for new product versions"
-      ]
-    },
-    {
-      title: "Engineer Training & Global Team Expansion",
-      description: "Led structured training and mentoring programs to develop engineers to operational independence, expanding team capacity and establishing SME coverage in a new geographic region.",
-      technologies: ["AWS Marketplace", "Cloud Infrastructure", "Mentoring", "Knowledge Transfer"],
-      achievements: [
-        "Onboarded new hires to operational independence within 1 week",
-        "Mentored engineers to full SME status in 3.5 months, establishing first-ever SME presence for Single AMI in Japan",
-        "Developed replicable training methodology that accelerated onboarding",
-        "Enabled more effective case distribution, reducing bottlenecks and improving response times"
       ]
     },
     {
